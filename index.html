@@ -387,6 +387,7 @@
   }
   .animation-placeholder {
     position: absolute;
+    background-color: var(--bg3); 
     inset: 0;
     display: flex;
     flex-direction: column;
@@ -397,6 +398,13 @@
     cursor: pointer;
     transition: background 0.2s ease;
   }
+  .animation-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,9,0.45);
+  z-index: 0;
+}
   .animation-placeholder:hover { background: #1a1a18; }
   .play-icon {
     width: 56px; height: 56px;
@@ -411,6 +419,12 @@
     transform: scale(1.08);
     background: rgba(200,169,110,0.1);
   }
+
+.animation-placeholder .play-icon,
+.animation-placeholder .animation-label {
+  position: relative;
+  z-index: 1;
+}
   .play-icon svg { margin-left: 4px; }
   .animation-label {
     font-size: 11px;
@@ -732,7 +746,7 @@
   </div>
   <div class="section-body">
     <p class="section-description reveal">
-      For the duration of an animation, the imaginary becomes reality.
+      For a moment, the imaginary turns into reality.
     </p>
 
     <!--
@@ -764,7 +778,9 @@
 
       <div class="animation-item">
         <div class="animation-item-inner">
-          <div class="animation-placeholder" onclick="loadVideo(this, '1179082109')">
+          <div class="animation-placeholder" 
+               onclick="loadVideo(this, '1179082109')"
+               style="background-image: url('assets/SNKL 23 Thumb.png'); background-size: cover; background-position: center;">
             <div class="play-icon">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/>
@@ -775,13 +791,15 @@
         </div>
         <div class="animation-info">
           <span class="animation-title">Seiko 5 Animation</span>
-          <span class="animation-duration">0:34</span>
+          <span class="animation-duration">0:35</span>
         </div>
       </div>
 
       <div class="animation-item">
         <div class="animation-item-inner">
-          <div class="animation-placeholder" onclick="loadVideo(this, '1179148572')">
+          <div class="animation-placeholder" 
+               onclick="loadVideo(this, '1179148572')"
+               style="background-image: url('assets/BYD Thumbnail.png'); background-size: cover; background-position: center;">
             <div class="play-icon">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/>
@@ -791,7 +809,7 @@
           </div>
         </div>
         <div class="animation-info">
-          <span class="animation-title">BYD Seal Concept</span>
+          <span class="animation-title">BYD Concept Animation</span>
           <span class="animation-duration">0:25</span>
         </div>
       </div>
