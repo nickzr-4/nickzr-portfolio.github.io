@@ -387,6 +387,7 @@
   }
   .animation-placeholder {
     position: absolute;
+    background-color: var(--bg3); 
     inset: 0;
     display: flex;
     flex-direction: column;
@@ -397,6 +398,13 @@
     cursor: pointer;
     transition: background 0.2s ease;
   }
+  .animation-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,9,0.45);
+  z-index: 0;
+}
   .animation-placeholder:hover { background: #1a1a18; }
   .play-icon {
     width: 56px; height: 56px;
@@ -411,6 +419,12 @@
     transform: scale(1.08);
     background: rgba(200,169,110,0.1);
   }
+
+.animation-placeholder .play-icon,
+.animation-placeholder .animation-label {
+  position: relative;
+  z-index: 1;
+}
   .play-icon svg { margin-left: 4px; }
   .animation-label {
     font-size: 11px;
@@ -676,7 +690,7 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-name">nickzr</a>
+  <a href="#" class="nav-name">NZR</a>
   <ul class="nav-links">
     <li><a href="#animation">Animation</a></li>
     <li><a href="#environments">Environments</a></li>
@@ -695,7 +709,7 @@
   -->
   <div class="hero-placeholder">
     <div class="hero-placeholder-text">
-      <span>nickzr</span>
+      <span>NZR</span>
       replace with hero-reel.mp4<br>
       assets/hero-reel.mp4
     </div>
@@ -732,7 +746,7 @@
   </div>
   <div class="section-body">
     <p class="section-description reveal">
-      For the duration of an animation, the imaginary becomes reality.
+      For a moment, the imaginary turns into reality.
     </p>
 
     <!--
@@ -746,7 +760,7 @@
 
       <div class="animation-item">
         <div class="animation-item-inner">
-          <div class="animation-placeholder" onclick="loadVideo(this, '1179082109')">
+          <div class="animation-placeholder" onclick="loadVideo(this, 'VIMEO_ID_1')">
             <div class="play-icon">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/>
@@ -758,13 +772,15 @@
         <div class="animation-info">
           <span class="animation-title">Animation Title 01</span>
           <!-- CUSTOMISE: update title and duration -->
-          <span class="animation-duration">0:34</span>
+          <span class="animation-duration">0:00</span>
         </div>
       </div>
 
       <div class="animation-item">
         <div class="animation-item-inner">
-          <div class="animation-placeholder" onclick="loadVideo(this, 'VIMEO_ID_2')">
+          <div class="animation-placeholder" 
+               onclick="loadVideo(this, '1179082109')"
+               style="background-image: url('assets/SNKL 23 Thumb.png'); background-size: cover; background-position: center;">
             <div class="play-icon">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/>
@@ -774,14 +790,16 @@
           </div>
         </div>
         <div class="animation-info">
-          <span class="animation-title">Animation Title 02</span>
-          <span class="animation-duration">0:00</span>
+          <span class="animation-title">Seiko 5 Animation</span>
+          <span class="animation-duration">0:35</span>
         </div>
       </div>
 
       <div class="animation-item">
         <div class="animation-item-inner">
-          <div class="animation-placeholder" onclick="loadVideo(this, 'VIMEO_ID_3')">
+          <div class="animation-placeholder" 
+               onclick="loadVideo(this, '1179148572')"
+               style="background-image: url('assets/BYD Thumbnail.png'); background-size: cover; background-position: center;">
             <div class="play-icon">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/>
@@ -791,8 +809,8 @@
           </div>
         </div>
         <div class="animation-info">
-          <span class="animation-title">Animation Title 03</span>
-          <span class="animation-duration">0:00</span>
+          <span class="animation-title">BYD Concept Animation</span>
+          <span class="animation-duration">0:25</span>
         </div>
       </div>
 
@@ -864,13 +882,12 @@
       <div class="work-grid col-1" style="margin-bottom:2px;">
         <div class="work-item wide">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Environment</span>
-              <span class="ph-title">env-01.jpg — Hero / Wide</span>
+            <img class="work-item-media img-slot" src="assets/Environment 1 Thumbnail.png">
+             
             </div>
             <div class="work-item-info">
-              <div class="work-item-title">Environment Title 01</div>
-              <div class="work-item-meta">Blender · ACES · 2025</div>
+              <div class="work-item-title">Tranquil Morning by The Lake</div>
+              <div class="work-item-meta">Blender · AgX Log </div>
             </div>
           </div>
         </div>
@@ -878,30 +895,27 @@
 
       <div class="work-grid col-2" style="margin-bottom:2px;">
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Environment</span>
-              <span class="ph-title">env-02.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Environment Title 02</div>
-              <div class="work-item-meta">Blender · PBR</div>
-            </div>
+           <div class="work-item-inner">
+            <img class="work-item-media img-slot" src="assets/Master Sword.jpg">
+          </div>
+          <div class="work-item-info">
+            <div class="work-item-title">Slumbering Deep Within the Woods</div>
+            <div class="work-item-meta">Blender · Filmic</div>
           </div>
         </div>
         <div class="work-item">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Environment</span>
-              <span class="ph-title">env-03.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Environment Title 03</div>
-              <div class="work-item-meta">Blender · PBR</div>
-            </div>
+            <img class="work-item-media img-slot" src="assets/Knight on Tree RSZ.png">
+          </div>
+          <div class="work-item-info">
+            <div class="work-item-title">Solemnity of Solace</div>
+            <div class="work-item-meta">Blender · AgX Log</div>
           </div>
         </div>
       </div>
+
+
+  
 
       <div class="work-grid col-3" style="margin-bottom:2px;">
         <div class="work-item">
@@ -1291,13 +1305,13 @@
     <!--
       CUSTOMISE: Replace # with actual URLs
     -->
-    <li><a href="#" target="_blank">LinkedIn</a></li>
-    <li><a href="#" target="_blank">Instagram</a></li>
-    <li><a href="#" target="_blank">Showreel</a></li>
+    <li><a href="https://www.linkedin.com/in/nikoramadhan/" target="_blank">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/nickzr_" target="_blank">Instagram</a></li>
+    <li><a href="https://www.youtube.com/watch?v=tlaT6uuVySY" target="_blank">Showreel</a></li>
     <li><a href="mailto:nikozramadhan@gmail.com">Contact</a></li>
   </ul>
   <p class="footer-copy">
-    Niko Zahfran Ramadhan &nbsp;·&nbsp; 3D Generalist · Editor · Colorist &nbsp;·&nbsp; Surabaya, Indonesia
+    2026 · Niko Zahfran Ramadhan &nbsp;·&nbsp; 3D Generalist · Editor · Colorist &nbsp;·&nbsp; Surabaya, Indonesia
   </p>
 </footer>
 
