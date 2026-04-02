@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Niko Zahfran Ramadhan — 3D Generalist · Editor · Colorist</title>
+<title>Niko Zahfran Ramadhan - 3D Generalist · Editor · Colorist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
-  /* ─── RESET & BASE ─────────────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -36,605 +35,295 @@
     cursor: none;
   }
 
-  /* ─── CUSTOM CURSOR ────────────────────────────────────────────── */
+  /* CURSOR */
   .cursor {
-    position: fixed;
-    width: 8px; height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
+    position: fixed; width: 8px; height: 8px;
+    background: var(--accent); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
     mix-blend-mode: difference;
   }
   .cursor-ring {
-    position: fixed;
-    width: 32px; height: 32px;
-    border: 1px solid rgba(200,169,110,0.4);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
+    position: fixed; width: 32px; height: 32px;
+    border: 1px solid rgba(200,169,110,0.4); border-radius: 50%;
+    pointer-events: none; z-index: 9998;
     transform: translate(-50%, -50%);
     transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
   }
   body:hover .cursor { opacity: 1; }
-  a:hover ~ .cursor, button:hover ~ .cursor { width: 16px; height: 16px; }
 
-  /* ─── NAV ──────────────────────────────────────────────────────── */
+  /* NAV */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
     padding: 24px 48px;
     transition: background 0.4s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
   }
   nav.scrolled {
-    background: rgba(10,10,9,0.92);
-    backdrop-filter: blur(12px);
-    padding: 16px 48px;
-    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,9,0.92); backdrop-filter: blur(12px);
+    padding: 16px 48px; border-bottom: 1px solid var(--border);
   }
   .nav-name {
-    font-family: var(--font-display);
-    font-size: 20px;
-    letter-spacing: 0.08em;
-    color: var(--text);
-    text-decoration: none;
-    opacity: 0.9;
+    font-family: var(--font-display); font-size: 20px;
+    letter-spacing: 0.08em; color: var(--text);
+    text-decoration: none; opacity: 0.9;
   }
-  .nav-links {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
   .nav-links a {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s ease;
-    font-weight: 400;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s ease; font-weight: 400;
   }
   .nav-links a:hover { color: var(--text); }
 
-  /* ─── HERO ─────────────────────────────────────────────────────── */
+  /* HERO */
   .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    min-height: 600px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
+    position: relative; width: 100%; height: 100vh; min-height: 600px;
+    overflow: hidden; display: flex; align-items: flex-end; justify-content: flex-start;
   }
   .hero-video {
-    position: absolute;
-    inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    opacity: 0.7;
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.7;
   }
   .hero-placeholder {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 40%, #0d1117 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
   }
   .hero-placeholder-text {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-align: center;
-    line-height: 2;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); text-align: center; line-height: 2;
   }
   .hero-placeholder-text span {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 48px;
-    letter-spacing: 0.05em;
-    color: rgba(255,255,255,0.06);
-    margin-bottom: 12px;
+    display: block; font-family: var(--font-display); font-size: 48px;
+    letter-spacing: 0.05em; color: rgba(255,255,255,0.06); margin-bottom: 12px;
   }
   .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(10,10,9,0.95) 0%,
-      rgba(10,10,9,0.4) 40%,
-      rgba(10,10,9,0.1) 100%
-    );
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,10,9,0.95) 0%, rgba(10,10,9,0.4) 40%, rgba(10,10,9,0.1) 100%);
   }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 0 48px 64px;
-    max-width: 800px;
-  }
+  .hero-content { position: relative; z-index: 2; padding: 0 48px 64px; max-width: 800px; }
   .hero-tag {
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-    display: block;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.3s forwards;
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px; display: block;
+    opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
   }
   .hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(52px, 8vw, 96px);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
-    color: var(--text);
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.5s forwards;
+    font-family: var(--font-display); font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.95; letter-spacing: 0.02em; color: var(--text);
+    margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
   }
-  .hero-title em {
-    font-style: normal;
-    color: var(--accent);
-  }
+  .hero-title em { font-style: normal; color: var(--accent); }
   .hero-subtitle {
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 400;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.7s forwards;
+    font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); font-weight: 400;
+    opacity: 0; animation: fadeUp 0.8s ease 0.7s forwards;
   }
   .hero-scroll {
-    position: absolute;
-    bottom: 32px;
-    right: 48px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    opacity: 0;
-    animation: fadeIn 1s ease 1.2s forwards;
+    position: absolute; bottom: 32px; right: 48px; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    opacity: 0; animation: fadeIn 1s ease 1.2s forwards;
   }
   .hero-scroll span {
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--muted);
-    writing-mode: vertical-rl;
+    font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--muted); writing-mode: vertical-rl;
   }
   .scroll-line {
-    width: 1px;
-    height: 48px;
+    width: 1px; height: 48px;
     background: linear-gradient(to bottom, var(--muted), transparent);
     animation: scrollPulse 2s ease infinite;
   }
 
-  /* ─── SECTION STRUCTURE ────────────────────────────────────────── */
+  /* SECTION STRUCTURE */
   .section-hero {
-    position: relative;
-    width: 100%;
-    height: 40vh;
-    min-height: 280px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
+    position: relative; width: 100%; height: 40vh; min-height: 280px;
+    overflow: hidden; display: flex; align-items: flex-end;
   }
-  .section-hero-bg {
-    position: absolute;
-    inset: 0;
-    background: var(--bg2);
-  }
-
-  /* Each section gets a unique subtle color tint */
-  .section-animation .section-hero-bg {
-    background: linear-gradient(135deg, #0d1520 0%, #111820 100%);
-  }
-  .section-environments .section-hero-bg {
-    background: linear-gradient(135deg, #0d150f 0%, #111a12 100%);
-  }
-  .section-models .section-hero-bg {
-    background: linear-gradient(135deg, #15100d 0%, #1a1410 100%);
-  }
-  .section-protected .section-hero-bg {
-    background: linear-gradient(135deg, #0f0d15 0%, #130f1a 100%);
-  }
-
+  .section-hero-bg { position: absolute; inset: 0; background: var(--bg2); }
+  .section-animation .section-hero-bg   { background: linear-gradient(135deg, #0d1520 0%, #111820 100%); }
+  .section-environments .section-hero-bg { background: linear-gradient(135deg, #0d150f 0%, #111a12 100%); }
+  .section-models .section-hero-bg       { background: linear-gradient(135deg, #15100d 0%, #1a1410 100%); }
+  .section-protected .section-hero-bg    { background: linear-gradient(135deg, #0f0d15 0%, #130f1a 100%); }
   .section-hero-overlay {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(10,10,9,1) 0%, rgba(10,10,9,0.2) 100%);
   }
-  .section-hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 0 48px 36px;
-  }
+  .section-hero-content { position: relative; z-index: 2; padding: 0 48px 36px; }
   .section-number {
-    font-size: 9px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 8px;
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--accent); display: block; margin-bottom: 8px;
   }
   .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(36px, 6vw, 72px);
-    letter-spacing: 0.03em;
-    line-height: 1;
-    color: var(--text);
+    font-family: var(--font-display); font-size: clamp(36px, 6vw, 72px);
+    letter-spacing: 0.03em; line-height: 1; color: var(--text);
   }
-  .section-body {
-    background: var(--bg);
-    padding: 64px 48px;
-  }
+  .section-body { background: var(--bg); padding: 64px 48px; }
   .section-description {
-    font-size: 13px;
-    color: var(--muted);
-    max-width: 520px;
-    margin-bottom: 48px;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    line-height: 1.8;
+    font-size: 13px; color: var(--muted); max-width: 520px;
+    margin-bottom: 48px; font-weight: 300; letter-spacing: 0.02em; line-height: 1.8;
   }
 
-  /* ─── WORK GRID ────────────────────────────────────────────────── */
-  .work-grid {
-    display: grid;
-    gap: 2px;
+  /* REGION TOGGLE */
+  .region-row {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 32px; margin-top: -24px;
   }
+  .region-label {
+    font-size: 9px; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .region-toggle {
+    display: flex; border: 1px solid var(--border);
+    border-radius: 2px; overflow: hidden;
+  }
+  .region-btn {
+    background: transparent; border: none;
+    padding: 6px 14px; font-family: var(--font-body);
+    font-size: 9px; font-weight: 400;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .region-btn + .region-btn { border-left: 1px solid var(--border); }
+  .region-btn.active { background: rgba(200,169,110,0.12); color: var(--accent); }
+  .region-btn:hover:not(.active) { background: rgba(255,255,255,0.04); color: var(--text); }
+
+  /* WORK GRID */
+  .work-grid { display: grid; gap: 2px; }
   .work-grid.col-1 { grid-template-columns: 1fr; }
   .work-grid.col-2 { grid-template-columns: repeat(2, 1fr); }
   .work-grid.col-3 { grid-template-columns: repeat(3, 1fr); }
 
-  .work-item {
-    position: relative;
-    overflow: hidden;
-    background: var(--bg3);
-    cursor: none;
-  }
+  .work-item { position: relative; overflow: hidden; background: var(--bg3); cursor: none; }
   .work-item::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(10,10,9,0.5);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    content: ''; position: absolute; inset: 0;
+    background: rgba(10,10,9,0.5); opacity: 0; transition: opacity 0.3s ease;
   }
   .work-item:hover::after { opacity: 1; }
-
-  .work-item-inner {
-    position: relative;
-    padding-top: 56.25%; /* 16:9 */
-    overflow: hidden;
-  }
+  .work-item-inner { position: relative; padding-top: 56.25%; overflow: hidden; }
   .work-item.tall .work-item-inner { padding-top: 75%; }
   .work-item.wide .work-item-inner { padding-top: 45%; }
-
   .work-item-media {
-    position: absolute;
-    inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-    background: var(--bg3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; transition: transform 0.6s ease; background: var(--bg3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
   }
   .work-item:hover .work-item-media { transform: scale(1.03); }
-
   .work-item-info {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
+    position: absolute; bottom: 0; left: 0; right: 0;
     padding: 20px 24px;
     background: linear-gradient(to top, rgba(10,10,9,0.95) 0%, transparent 100%);
-    z-index: 2;
-    transform: translateY(4px);
-    opacity: 0;
+    z-index: 2; transform: translateY(4px); opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
   .work-item:hover .work-item-info { opacity: 1; transform: translateY(0); }
+  .work-item-title { font-size: 13px; font-weight: 400; color: var(--text); letter-spacing: 0.05em; margin-bottom: 2px; }
+  .work-item-meta  { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
 
-  .work-item-title {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--text);
-    letter-spacing: 0.05em;
-    margin-bottom: 2px;
-  }
-  .work-item-meta {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* Animation section — featured single items */
-  .animation-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .animation-item {
-    position: relative;
-    overflow: hidden;
-    background: var(--bg3);
-  }
-  .animation-item-inner {
-    position: relative;
-    padding-top: 56.25%;
-  }
-  .animation-embed {
-    position: absolute;
-    inset: 0;
-    width: 100%; height: 100%;
-    border: none;
-  }
+  /* ANIMATION ITEMS */
+  .animation-list { display: flex; flex-direction: column; gap: 2px; }
+  .animation-item { position: relative; overflow: hidden; background: var(--bg3); }
+  .animation-item-inner { position: relative; padding-top: 56.25%; }
+  .animation-embed { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
   .animation-placeholder {
-    position: absolute;
-    background-color: var(--bg3); 
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: var(--bg3);
-    gap: 12px;
-    cursor: pointer;
-    transition: background 0.2s ease;
+    position: absolute; inset: 0; background-color: var(--bg3);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; cursor: pointer; transition: background 0.2s ease;
   }
   .animation-placeholder::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(10,10,9,0.45);
-  z-index: 0;
-}
+    content: ''; position: absolute; inset: 0;
+    background: rgba(10,10,9,0.45); z-index: 0;
+  }
   .animation-placeholder:hover { background: #1a1a18; }
+  .animation-placeholder .play-icon,
+  .animation-placeholder .animation-label { position: relative; z-index: 1; }
   .play-icon {
-    width: 56px; height: 56px;
-    border: 1px solid var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 56px; height: 56px; border: 1px solid var(--accent);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
     transition: transform 0.2s ease, background 0.2s ease;
   }
-  .animation-placeholder:hover .play-icon {
-    transform: scale(1.08);
-    background: rgba(200,169,110,0.1);
-  }
-
-.animation-placeholder .play-icon,
-.animation-placeholder .animation-label {
-  position: relative;
-  z-index: 1;
-}
+  .animation-placeholder:hover .play-icon { transform: scale(1.08); background: rgba(200,169,110,0.1); }
   .play-icon svg { margin-left: 4px; }
-  .animation-label {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
+  .animation-label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
   .animation-info {
-    padding: 20px 24px;
-    background: var(--bg2);
+    padding: 20px 24px; background: var(--bg2);
     border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    display: flex; justify-content: space-between; align-items: baseline;
   }
-  .animation-title {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--text);
-    letter-spacing: 0.04em;
-  }
-  .animation-duration {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
+  .animation-title  { font-size: 14px; font-weight: 400; color: var(--text); letter-spacing: 0.04em; }
+  .animation-duration { font-size: 10px; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
 
-  /* ─── DIVIDER ──────────────────────────────────────────────────── */
-  .section-divider {
-    width: 100%;
-    height: 1px;
-    background: var(--border);
-    margin: 0;
-  }
+  /* DIVIDER */
+  .section-divider { width: 100%; height: 1px; background: var(--border); margin: 0; }
 
-  /* ─── PASSWORD GATE ────────────────────────────────────────────── */
-  .password-gate {
-    max-width: 480px;
-    margin: 0 auto 48px;
-    text-align: center;
-  }
+  /* PASSWORD GATE */
+  .password-gate { max-width: 480px; margin: 0 auto 48px; text-align: center; }
   .gate-icon {
-    width: 48px; height: 48px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 24px;
+    width: 48px; height: 48px; border: 1px solid var(--border);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;
   }
-  .gate-title {
-    font-family: var(--font-display);
-    font-size: 28px;
-    letter-spacing: 0.05em;
-    color: var(--text);
-    margin-bottom: 12px;
-  }
-  .gate-description {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 32px;
-  }
+  .gate-title { font-family: var(--font-display); font-size: 28px; letter-spacing: 0.05em; color: var(--text); margin-bottom: 12px; }
+  .gate-description { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 32px; }
   .gate-form {
-    display: flex;
-    gap: 0;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    overflow: hidden;
-    transition: border-color 0.2s ease;
+    display: flex; border: 1px solid var(--border);
+    border-radius: 2px; overflow: hidden; transition: border-color 0.2s ease;
   }
   .gate-form:focus-within { border-color: rgba(200,169,110,0.4); }
   .gate-input {
-    flex: 1;
-    background: var(--bg2);
-    border: none;
-    outline: none;
-    padding: 14px 20px;
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--text);
-    letter-spacing: 0.03em;
+    flex: 1; background: var(--bg2); border: none; outline: none;
+    padding: 14px 20px; font-family: var(--font-body);
+    font-size: 13px; font-weight: 300; color: var(--text); letter-spacing: 0.03em;
   }
   .gate-input::placeholder { color: var(--muted); }
   .gate-btn {
-    background: var(--accent);
-    border: none;
-    padding: 14px 24px;
-    font-family: var(--font-body);
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--bg);
-    cursor: none;
-    transition: opacity 0.2s ease;
-    white-space: nowrap;
+    background: var(--accent); border: none; padding: 14px 24px;
+    font-family: var(--font-body); font-size: 10px; font-weight: 400;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg);
+    cursor: pointer; transition: opacity 0.2s ease; white-space: nowrap;
   }
   .gate-btn:hover { opacity: 0.85; }
   .gate-result {
-    display: none;
-    margin-top: 20px;
-    padding: 16px 24px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    text-align: left;
+    display: none; margin-top: 20px; padding: 16px 24px;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 2px; text-align: left;
   }
   .gate-result.visible { display: block; }
   .gate-result-label {
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 6px;
-    display: block;
+    font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 6px; display: block;
   }
-  .gate-result-password {
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
-    color: var(--text);
-    letter-spacing: 0.15em;
-  }
-  .gate-note {
-    font-size: 11px;
-    color: var(--muted);
-    margin-top: 8px;
-    font-style: italic;
-  }
+  .gate-result-password { font-family: 'Courier New', monospace; font-size: 16px; color: var(--text); letter-spacing: 0.15em; }
+  .gate-note { font-size: 11px; color: var(--muted); margin-top: 8px; font-style: italic; }
+  .protected-content { display: none; }
+  .protected-content.unlocked { display: block; }
 
-  /* Protected content — hidden until unlocked */
-  .protected-content {
-    display: none;
-  }
-  .protected-content.unlocked {
-    display: block;
-  }
-
-  /* ─── FOOTER ───────────────────────────────────────────────────── */
+  /* FOOTER */
   footer {
-    background: var(--bg);
-    border-top: 1px solid var(--border);
-    padding: 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
+    background: var(--bg); border-top: 1px solid var(--border);
+    padding: 48px; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 24px;
   }
-  .footer-name {
-    font-family: var(--font-display);
-    font-size: 24px;
-    letter-spacing: 0.06em;
-    color: var(--text);
-    opacity: 0.6;
-  }
-  .footer-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-  .footer-links a {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
+  .footer-name { font-family: var(--font-display); font-size: 24px; letter-spacing: 0.06em; color: var(--text); opacity: 0.6; }
+  .footer-links { display: flex; gap: 32px; list-style: none; }
+  .footer-links a { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
   .footer-links a:hover { color: var(--text); }
-  .footer-copy {
-    font-size: 11px;
-    color: var(--muted);
-    width: 100%;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    letter-spacing: 0.05em;
-  }
+  .footer-copy { font-size: 11px; color: var(--muted); width: 100%; padding-top: 24px; border-top: 1px solid var(--border); letter-spacing: 0.05em; }
 
-  /* ─── SCROLL REVEAL ────────────────────────────────────────────── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
 
-  /* ─── KEYFRAMES ────────────────────────────────────────────────── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(1); }
-    50%       { opacity: 1;   transform: scaleY(1.2); transform-origin: top; }
-  }
+  /* KEYFRAMES */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes scrollPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
-  /* ─── RESPONSIVE ───────────────────────────────────────────────── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 20px 24px; }
     nav.scrolled { padding: 14px 24px; }
@@ -643,52 +332,28 @@
     .hero-scroll { right: 24px; }
     .section-body { padding: 48px 24px; }
     .section-hero-content { padding: 0 24px 28px; }
-    .work-grid.col-2,
-    .work-grid.col-3 { grid-template-columns: 1fr; }
+    .work-grid.col-2, .work-grid.col-3 { grid-template-columns: 1fr; }
     footer { padding: 32px 24px; }
     .footer-links { display: none; }
     .password-gate { padding: 0 8px; }
   }
 
-  /* ─── PLACEHOLDER ITEM STYLES ──────────────────────────────────── */
+  /* PLACEHOLDER */
   .placeholder-item {
-    background: var(--bg3);
-    border: 1px dashed rgba(255,255,255,0.06);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 240px;
-    color: var(--muted);
+    background: var(--bg3); border: 1px dashed rgba(255,255,255,0.06);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; min-height: 240px; color: var(--muted);
   }
-  .placeholder-item .ph-label {
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-  }
-  .placeholder-item .ph-title {
-    font-size: 13px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.2);
-    letter-spacing: 0.05em;
-  }
-
-  /* Image replacement helpers — replace src with actual file paths */
-  .img-slot {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  .placeholder-item .ph-label { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; }
+  .placeholder-item .ph-title { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
+  .img-slot { width: 100%; height: 100%; object-fit: cover; display: block; }
 </style>
 </head>
 <body>
 
-<!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-name">NZR</a>
   <ul class="nav-links">
@@ -699,10 +364,10 @@
   </ul>
 </nav>
 
-<!-- ═══ HERO ══════════════════════════════════════════════════════ -->
+<!-- HERO -->
 <section class="hero">
   <!--
-    CUSTOMISE: Replace the placeholder below with your video.
+    CUSTOMISE: Replace placeholder with your video.
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="assets/hero-reel.mp4" type="video/mp4">
     </video>
@@ -710,18 +375,13 @@
   <div class="hero-placeholder">
     <div class="hero-placeholder-text">
       <span>NZR</span>
-      replace with hero-reel.mp4<br>
-      assets/hero-reel.mp4
+      replace with hero-reel.mp4<br>assets/hero-reel.mp4
     </div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-tag">3D Generalist · Editor · Colorist</span>
-    <h1 class="hero-title">
-      Niko<br>
-      Zahfran<br>
-      <em>Ramadhan</em>
-    </h1>
+    <h1 class="hero-title">Niko<br>Zhafran<br><em>Ramadhan</em></h1>
     <p class="hero-subtitle">Surabaya, Indonesia &nbsp;·&nbsp; Available Worldwide</p>
   </div>
   <div class="hero-scroll">
@@ -730,12 +390,12 @@
   </div>
 </section>
 
-<!-- ═══ ANIMATION ════════════════════════════════════════════════ -->
+<!-- ANIMATION -->
 <section id="animation" class="section-animation">
   <div class="section-hero">
     <div class="section-hero-bg"></div>
     <!--
-      CUSTOMISE: Add a still frame from your best animation as background
+      CUSTOMISE: Add still frame background
       <img src="assets/animation-hero.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.3;">
     -->
     <div class="section-hero-overlay"></div>
@@ -745,46 +405,57 @@
     </div>
   </div>
   <div class="section-body">
-    <p class="section-description reveal">
-      For a moment, the imaginary turns into reality.
-    </p>
+    <p class="section-description reveal">My selected works where for a moment, the imaginary turns into reality.</p>
+
+    <!-- REGION TOGGLE -->
+    <div class="region-row reveal reveal-delay-1">
+      <span class="region-label">Video region</span>
+      <div class="region-toggle">
+        <button class="region-btn active" data-region="global" onclick="setRegion('global', this)">GLOBAL</button>
+        <button class="region-btn" data-region="id" onclick="setRegion('id', this)">INDONESIA</button>
+      </div>
+    </div>
 
     <!--
-      CUSTOMISE: Replace each animation-placeholder with a Vimeo embed.
-      To embed from Vimeo:
-      <iframe class="animation-embed" src="https://player.vimeo.com/video/YOUR_VIDEO_ID?autoplay=0&title=0&byline=0&portrait=0" allow="fullscreen"></iframe>
+      HOW TO FILL IN VIDEO IDs:
+      - data-vimeo   = the number from https://vimeo.com/NUMBER       (used for Global)
+      - data-youtube = the code  from https://youtu.be/CODE           (used for ID)
 
-      Add / remove .animation-item blocks to match your 4 animations.
+      Example: https://vimeo.com/1179082109   → data-vimeo="1179082109"
+               https://youtu.be/tlaT6uuVySY  → data-youtube="tlaT6uuVySY"
     -->
-    <div class="animation-list reveal reveal-delay-1">
+    <div class="animation-list reveal reveal-delay-2">
 
+      <!-- ANIMATION 01 — CUSTOMISE -->
       <div class="animation-item">
         <div class="animation-item-inner">
-          <div class="animation-placeholder" onclick="loadVideo(this, 'VIMEO_ID_1')">
+          <div class="animation-placeholder"
+               data-vimeo="VIMEO_ID_1"
+               data-youtube="YOUTUBE_ID_1"
+               onclick="loadVideo(this)"
+               style="background-image:url(''); background-size:cover; background-position:center;">
             <div class="play-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/>
-              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/></svg>
             </div>
             <span class="animation-label">Play</span>
           </div>
         </div>
         <div class="animation-info">
           <span class="animation-title">Animation Title 01</span>
-          <!-- CUSTOMISE: update title and duration -->
           <span class="animation-duration">0:00</span>
         </div>
       </div>
 
+      <!-- ANIMATION 02 — Seiko 5 -->
       <div class="animation-item">
         <div class="animation-item-inner">
-          <div class="animation-placeholder" 
-               onclick="loadVideo(this, '1179082109')"
-               style="background-image: url('assets/SNKL 23 Thumb.png'); background-size: cover; background-position: center;">
+          <div class="animation-placeholder"
+               data-vimeo="1179082109"
+               data-youtube="_Blwl3Xc9M8"
+               onclick="loadVideo(this)"
+               style="background-image:url('assets/SNKL 23 Thumb.png'); background-size:cover; background-position:center;">
             <div class="play-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/>
-              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/></svg>
             </div>
             <span class="animation-label">Play</span>
           </div>
@@ -795,15 +466,16 @@
         </div>
       </div>
 
+      <!-- ANIMATION 03 — BYD Concept -->
       <div class="animation-item">
         <div class="animation-item-inner">
-          <div class="animation-placeholder" 
-               onclick="loadVideo(this, '1179148572')"
-               style="background-image: url('assets/BYD Thumbnail.png'); background-size: cover; background-position: center;">
+          <div class="animation-placeholder"
+               data-vimeo="1179148572"
+               data-youtube="0e2pf1CYInU"
+               onclick="loadVideo(this)"
+               style="background-image:url('assets/BYD Thumbnail.png'); background-size:cover; background-position:center;">
             <div class="play-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/>
-              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/></svg>
             </div>
             <span class="animation-label">Play</span>
           </div>
@@ -814,13 +486,16 @@
         </div>
       </div>
 
+      <!-- ANIMATION 04 — CUSTOMISE -->
       <div class="animation-item">
         <div class="animation-item-inner">
-          <div class="animation-placeholder" onclick="loadVideo(this, 'VIMEO_ID_4')">
+          <div class="animation-placeholder"
+               data-vimeo="VIMEO_ID_4"
+               data-youtube="YOUTUBE_ID_4"
+               onclick="loadVideo(this)"
+               style="background-image:url(''); background-size:cover; background-position:center;">
             <div class="play-icon">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/>
-              </svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l9 5-9 5V3z" fill="#c8a96e"/></svg>
             </div>
             <span class="animation-label">Play</span>
           </div>
@@ -837,12 +512,12 @@
 
 <div class="section-divider"></div>
 
-<!-- ═══ ENVIRONMENTS ══════════════════════════════════════════════ -->
+<!-- ENVIRONMENTS -->
 <section id="environments" class="section-environments">
   <div class="section-hero">
     <div class="section-hero-bg"></div>
     <!--
-      CUSTOMISE: Add your best environment render as background
+      CUSTOMISE: Add environment hero background
       <img src="assets/env-hero.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;">
     -->
     <div class="section-hero-overlay"></div>
@@ -852,30 +527,7 @@
     </div>
   </div>
   <div class="section-body">
-    <p class="section-description reveal">
-      Spaces where the boundary between reality and imaginary blurs.
-    </p>
-
-    <!--
-      CUSTOMISE: Replace placeholder divs with <img> tags pointing to your renders.
-      Example:
-      <div class="work-item">
-        <div class="work-item-inner">
-          <img class="work-item-media img-slot" src="assets/env-01.jpg" alt="Environment 01">
-          <div class="work-item-info">
-            <div class="work-item-title">Title</div>
-            <div class="work-item-meta">Blender · ACES</div>
-          </div>
-        </div>
-      </div>
-
-      Grid layout: col-2 shows 2 columns. Mix .tall and .wide classes for variety.
-      Suggested layout for 8 environments:
-      Row 1: 1 wide item (col-1)
-      Row 2: 2 items (col-2)
-      Row 3: 3 items (col-3)
-      Row 4: 2 items (col-2)
-    -->
+    <p class="section-description reveal">Selected works where I build worlds to immerse myself.</p>
 
     <div class="reveal reveal-delay-1">
 
@@ -883,19 +535,17 @@
         <div class="work-item wide">
           <div class="work-item-inner">
             <img class="work-item-media img-slot" src="assets/Environment 1 Thumbnail.png">
-             
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Tranquil Morning by The Lake</div>
-              <div class="work-item-meta">Blender · AgX Log </div>
-            </div>
+          </div>
+          <div class="work-item-info">
+            <div class="work-item-title">Tranquil Morning by The Lake</div>
+            <div class="work-item-meta">Blender · AgX Log</div>
           </div>
         </div>
       </div>
 
       <div class="work-grid col-2" style="margin-bottom:2px;">
         <div class="work-item">
-           <div class="work-item-inner">
+          <div class="work-item-inner">
             <img class="work-item-media img-slot" src="assets/Master Sword.jpg">
           </div>
           <div class="work-item-info">
@@ -914,44 +564,23 @@
         </div>
       </div>
 
-
-  
-
       <div class="work-grid col-3" style="margin-bottom:2px;">
         <div class="work-item">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Environment</span>
-              <span class="ph-title">env-04.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Environment Title 04</div>
-              <div class="work-item-meta">Blender</div>
-            </div>
+            <div class="work-item-media placeholder-item"><span class="ph-label">Environment</span><span class="ph-title">env-04.jpg</span></div>
+            <div class="work-item-info"><div class="work-item-title">Environment Title 04</div><div class="work-item-meta">Blender</div></div>
           </div>
         </div>
         <div class="work-item">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Environment</span>
-              <span class="ph-title">env-05.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Environment Title 05</div>
-              <div class="work-item-meta">Blender</div>
-            </div>
+            <div class="work-item-media placeholder-item"><span class="ph-label">Environment</span><span class="ph-title">env-05.jpg</span></div>
+            <div class="work-item-info"><div class="work-item-title">Environment Title 05</div><div class="work-item-meta">Blender</div></div>
           </div>
         </div>
         <div class="work-item">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Environment</span>
-              <span class="ph-title">env-06.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Environment Title 06</div>
-              <div class="work-item-meta">Blender</div>
-            </div>
+            <div class="work-item-media placeholder-item"><span class="ph-label">Environment</span><span class="ph-title">env-06.jpg</span></div>
+            <div class="work-item-info"><div class="work-item-title">Environment Title 06</div><div class="work-item-meta">Blender</div></div>
           </div>
         </div>
       </div>
@@ -959,26 +588,14 @@
       <div class="work-grid col-2">
         <div class="work-item">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Environment</span>
-              <span class="ph-title">env-07.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Environment Title 07</div>
-              <div class="work-item-meta">Blender · ACES</div>
-            </div>
+            <div class="work-item-media placeholder-item"><span class="ph-label">Environment</span><span class="ph-title">env-07.jpg</span></div>
+            <div class="work-item-info"><div class="work-item-title">Environment Title 07</div><div class="work-item-meta">Blender · ACES</div></div>
           </div>
         </div>
         <div class="work-item">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Environment</span>
-              <span class="ph-title">env-08.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Environment Title 08</div>
-              <div class="work-item-meta">Blender · ACES</div>
-            </div>
+            <div class="work-item-media placeholder-item"><span class="ph-label">Environment</span><span class="ph-title">env-08.jpg</span></div>
+            <div class="work-item-info"><div class="work-item-title">Environment Title 08</div><div class="work-item-meta">Blender · ACES</div></div>
           </div>
         </div>
       </div>
@@ -989,12 +606,12 @@
 
 <div class="section-divider"></div>
 
-<!-- ═══ MODELS ════════════════════════════════════════════════════ -->
+<!-- MODELS -->
 <section id="models" class="section-models">
   <div class="section-hero">
     <div class="section-hero-bg"></div>
     <!--
-      CUSTOMISE: Add your best model render as background
+      CUSTOMISE: Add models hero background
       <img src="assets/models-hero.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.3;">
     -->
     <div class="section-hero-overlay"></div>
@@ -1004,198 +621,178 @@
     </div>
   </div>
   <div class="section-body">
-    <p class="section-description reveal">
-      Hero objects. Up to 300K polygons. Optimized to 85% reduction without losing visual integrity.
-    </p>
-
-    <!--
-      CUSTOMISE: 15+ models — use col-3 grid primarily.
-      Add more .work-grid.col-3 rows as needed.
-      For hero product shots use col-1 or col-2 to give them more presence.
-    -->
+    <p class="section-description reveal">Selected works where I model stuff to play around with.</p>
 
     <div class="reveal reveal-delay-1">
 
       <div class="work-grid col-2" style="margin-bottom:2px;">
         <div class="work-item tall">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Hero Model</span>
-              <span class="ph-title">model-01.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 01</div>
-              <div class="work-item-meta">PBR · 300K poly</div>
-            </div>
+            <div class="work-item-media placeholder-item"><span class="ph-label">Hero Model</span><span class="ph-title">model-01.jpg</span></div>
+            <div class="work-item-info"><div class="work-item-title">Model Title 01</div><div class="work-item-meta">PBR · 300K poly</div></div>
           </div>
         </div>
         <div class="work-item tall">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Hero Model</span>
-              <span class="ph-title">model-02.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 02</div>
-              <div class="work-item-meta">PBR · 300K poly</div>
-            </div>
+            <div class="work-item-media placeholder-item"><span class="ph-label">Hero Model</span><span class="ph-title">model-02.jpg</span></div>
+            <div class="work-item-info"><div class="work-item-title">Model Title 02</div><div class="work-item-meta">PBR · 300K poly</div></div>
           </div>
         </div>
       </div>
 
       <div class="work-grid col-3" style="margin-bottom:2px;">
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-03.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 03</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-03.jpg</span>
           </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 03</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
         </div>
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-04.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 04</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-04.jpg</span>
           </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 04</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
         </div>
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-05.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 05</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-05.jpg</span>
           </div>
-        </div>
-      </div>
-
-      <div class="work-grid col-3" style="margin-bottom:2px;">
-        <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-06.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 06</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 05</div>
+           <div class="work-item-meta">PBR</div>
           </div>
-        </div>
-        <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-07.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 07</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
-          </div>
-        </div>
-        <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-08.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 08</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
-          </div>
+         </div>
         </div>
       </div>
 
       <div class="work-grid col-3" style="margin-bottom:2px;">
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-09.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 09</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-06.jpg</span>
           </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 06</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
         </div>
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-10.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 10</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-07.jpg</span>
           </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 07</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
         </div>
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-11.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 11</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-08.jpg</span>
           </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 08</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
+        </div>
+      </div>
+
+      <div class="work-grid col-3" style="margin-bottom:2px;">
+        <div class="work-item">
+         <div class="work-item-inner">
+         <div class="work-item-media placeholder-item">
+          <span class="ph-label">Model</span>
+          <span class="ph-title">model-09.jpg</span>
+         </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 09</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
+        </div>
+        <div class="work-item">
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-10.jpg</span>
+          </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 10</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
+        </div>
+        <div class="work-item">
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-11.jpg</span>
+          </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 11</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
         </div>
       </div>
 
       <div class="work-grid col-3">
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-12.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 12</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-12.jpg</span>
           </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 12</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
         </div>
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-13.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 13</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-13.jpg</span>
           </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 13</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
         </div>
         <div class="work-item">
-          <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Model</span>
-              <span class="ph-title">model-14.jpg — add more as needed</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Model Title 14+</div>
-              <div class="work-item-meta">PBR</div>
-            </div>
+         <div class="work-item-inner">
+          <div class="work-item-media placeholder-item">
+           <span class="ph-label">Model</span>
+           <span class="ph-title">model-14.jpg</span>
           </div>
+          <div class="work-item-info">
+           <div class="work-item-title">Model Title 14+</div>
+           <div class="work-item-meta">PBR</div>
+          </div>
+         </div>
         </div>
       </div>
 
@@ -1205,7 +802,7 @@
 
 <div class="section-divider"></div>
 
-<!-- ═══ PROTECTED WORK ════════════════════════════════════════════ -->
+<!-- CLIENT WORK -->
 <section id="work" class="section-protected">
   <div class="section-hero">
     <div class="section-hero-bg"></div>
@@ -1216,12 +813,8 @@
     </div>
   </div>
   <div class="section-body">
-    <p class="section-description reveal">
-      Commercial work across fragrance, F&B, footwear, and architectural categories.
-      Available on request.
-    </p>
+    <p class="section-description reveal">Commercial work across fragrance, F&amp;B, footwear, and architectural categories. Available on request.</p>
 
-    <!-- PASSWORD GATE -->
     <div class="password-gate reveal reveal-delay-1" id="passwordGate">
       <div class="gate-icon">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -1231,107 +824,67 @@
         </svg>
       </div>
       <h3 class="gate-title">Request Access</h3>
-      <p class="gate-description">
-        Enter your email to receive the access password.<br>
-        No sign-up required.
-      </p>
+      <p class="gate-description">Enter your email to receive the access password.<br>No sign-up required.</p>
       <div class="gate-form">
-        <input
-          type="email"
-          class="gate-input"
-          id="gateEmail"
-          placeholder="your@email.com"
-          autocomplete="off"
-        >
+        <input type="email" class="gate-input" id="gateEmail" placeholder="your@email.com" autocomplete="off">
         <button class="gate-btn" onclick="revealPassword()">Access</button>
       </div>
       <div class="gate-result" id="gateResult">
         <span class="gate-result-label">Password</span>
-        <!--
-          CUSTOMISE: Replace YOUR_PASSWORD_HERE with the actual password.
-          This is intentionally simple — it's a token gate, not a security system.
-        -->
+        <!-- CUSTOMISE: Replace YOUR_PASSWORD_HERE -->
         <div class="gate-result-password" id="gatePassword">YOUR_PASSWORD_HERE</div>
         <p class="gate-note">Use this password to view the protected portfolio below.</p>
       </div>
     </div>
 
-    <!-- PROTECTED CONTENT — shown after password reveal -->
     <div class="protected-content" id="protectedContent">
-      <!--
-        CUSTOMISE: Add your 20+ protected work items here.
-        Same structure as the models/environments sections above.
-        Use col-2 or col-3 grids.
-      -->
       <div class="work-grid col-2" style="margin-bottom:2px;">
         <div class="work-item">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Client Work</span>
-              <span class="ph-title">client-01.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Client Work 01</div>
-              <div class="work-item-meta">Fragrance · Social Campaign</div>
-            </div>
+            <div class="work-item-media placeholder-item"><span class="ph-label">Client Work</span><span class="ph-title">client-01.jpg</span></div>
+            <div class="work-item-info"><div class="work-item-title">Client Work 01</div><div class="work-item-meta">Fragrance · Social Campaign</div></div>
           </div>
         </div>
         <div class="work-item">
           <div class="work-item-inner">
-            <div class="work-item-media placeholder-item">
-              <span class="ph-label">Client Work</span>
-              <span class="ph-title">client-02.jpg</span>
-            </div>
-            <div class="work-item-info">
-              <div class="work-item-title">Client Work 02</div>
-              <div class="work-item-meta">Product · Visualization</div>
-            </div>
+            <div class="work-item-media placeholder-item"><span class="ph-label">Client Work</span><span class="ph-title">client-02.jpg</span></div>
+            <div class="work-item-info"><div class="work-item-title">Client Work 02</div><div class="work-item-meta">Product · Visualization</div></div>
           </div>
         </div>
       </div>
-      <!-- Add more rows here following the same pattern -->
       <p style="font-size:11px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;padding:32px 0;text-align:center;">
         Add remaining client work items following the same grid pattern above
       </p>
     </div>
-
   </div>
 </section>
 
-<!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
   <span class="footer-name">NZR</span>
   <ul class="footer-links">
-    <!--
-      CUSTOMISE: Replace # with actual URLs
-    -->
     <li><a href="https://www.linkedin.com/in/nikoramadhan/" target="_blank">LinkedIn</a></li>
     <li><a href="https://www.instagram.com/nickzr_" target="_blank">Instagram</a></li>
     <li><a href="https://www.youtube.com/watch?v=tlaT6uuVySY" target="_blank">Showreel</a></li>
     <li><a href="mailto:nikozramadhan@gmail.com">Contact</a></li>
   </ul>
-  <p class="footer-copy">
-    2026 | Niko Zahfran Ramadhan &nbsp;|&nbsp; 3D Generalist · Editor · Colorist &nbsp;|&nbsp; Surabaya, Indonesia
-  </p>
+  <p class="footer-copy">2026 | Niko Zahfran Ramadhan &nbsp;|&nbsp; 3D Generalist · Editor · Colorist &nbsp;|&nbsp; Surabaya, Indonesia</p>
 </footer>
 
 <script>
-  /* ─── CURSOR ──────────────────────────────────────────────────── */
-  const cursor     = document.getElementById('cursor');
+  /* CURSOR */
+  const cursor = document.getElementById('cursor');
   const cursorRing = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
 
   document.addEventListener('mousemove', e => {
     mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top  = my + 'px';
+    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
   });
 
   function animateRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    cursorRing.style.left = rx + 'px';
-    cursorRing.style.top  = ry + 'px';
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    cursorRing.style.left = rx + 'px'; cursorRing.style.top = ry + 'px';
     requestAnimationFrame(animateRing);
   }
   animateRing();
@@ -1349,72 +902,64 @@
     });
   });
 
-  /* ─── NAV SCROLL ──────────────────────────────────────────────── */
+  /* NAV */
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
 
-  /* ─── SCROLL REVEAL ───────────────────────────────────────────── */
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer  = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
+  /* SCROLL REVEAL */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.12 });
-  revealEls.forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  /* ─── VIDEO LOADER ────────────────────────────────────────────── */
-  function loadVideo(placeholder, vimeoId) {
-    if (vimeoId === 'VIMEO_ID_1' || vimeoId.startsWith('VIMEO')) {
-      alert('CUSTOMISE: Replace VIMEO_ID_1 through VIMEO_ID_4 with your actual Vimeo video IDs in the HTML.');
+  /* REGION TOGGLE */
+  let region = 'global';
+
+  function setRegion(r, btn) {
+    region = r;
+    document.querySelectorAll('.region-btn').forEach(b => b.classList.toggle('active', b.dataset.region === r));
+  }
+
+  /* VIDEO LOADER */
+  function loadVideo(placeholder) {
+    const vimeoId   = placeholder.dataset.vimeo;
+    const youtubeId = placeholder.dataset.youtube;
+
+    if (region === 'global' && (!vimeoId || vimeoId.startsWith('VIMEO'))) {
+      alert('CUSTOMISE: Replace the VIMEO_ID placeholder in data-vimeo with your actual Vimeo video ID.');
       return;
     }
+    if (region === 'id' && (!youtubeId || youtubeId.startsWith('YOUTUBE'))) {
+      alert('CUSTOMISE: Replace the YOUTUBE_ID placeholder in data-youtube with your actual YouTube video ID.');
+      return;
+    }
+
+    const src = region === 'id'
+      ? `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`
+      : `https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0`;
+
     const iframe = document.createElement('iframe');
     iframe.className = 'animation-embed';
-    iframe.src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0`;
-    iframe.allow = 'autoplay; fullscreen';
+    iframe.src = src;
+    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
     placeholder.parentNode.replaceChild(iframe, placeholder);
   }
 
-  /* ─── PASSWORD GATE ───────────────────────────────────────────── */
+  /* PASSWORD GATE */
   function revealPassword() {
-    const email  = document.getElementById('gateEmail').value.trim();
-    const result = document.getElementById('gateResult');
+    const email   = document.getElementById('gateEmail').value.trim();
+    const result  = document.getElementById('gateResult');
     const content = document.getElementById('protectedContent');
-
     if (!email || !email.includes('@')) {
       document.getElementById('gateEmail').style.borderBottom = '1px solid rgba(200,100,80,0.5)';
       return;
     }
-
     result.classList.add('visible');
     content.classList.add('unlocked');
-
-    /* Smooth scroll to content */
-    setTimeout(() => {
-      content.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 300);
-
-    /*
-      OPTIONAL: If you want to actually collect emails, replace this comment
-      with a fetch() call to a form service like Formspree or Netlify Forms.
-
-      fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email })
-      });
-    */
+    setTimeout(() => content.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
   }
 
-  /* Allow Enter key on email input */
-  document.getElementById('gateEmail').addEventListener('keydown', e => {
-    if (e.key === 'Enter') revealPassword();
-  });
+  document.getElementById('gateEmail').addEventListener('keydown', e => { if (e.key === 'Enter') revealPassword(); });
 </script>
 
 </body>
